@@ -51,6 +51,7 @@
     "react-native-web": "~0.19.10",
     "tailwind-merge": "^2.2.1",
     "zeego": "^1.9.1",
+    "zod": "^3.23.8",
     "zustand": "^4.5.2"
   },
   "devDependencies": {
