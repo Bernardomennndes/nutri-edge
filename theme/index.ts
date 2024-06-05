@@ -1,20 +1,9 @@
 import { Theme } from '@react-navigation/native';
+
 import { COLORS } from './colors';
 
-const NAV_THEME: { light: Theme; dark: Theme } = {
-  light: {
-    dark: false,
-    colors: {
-      background: COLORS.light.background,
-      border: COLORS.light.grey5,
-      card: COLORS.light.card,
-      notification: COLORS.light.destructive,
-      primary: COLORS.light.primary,
-      text: COLORS.black,
-    },
-  },
+const NAV_THEME: { dark: Theme; light: Theme } = {
   dark: {
-    dark: true,
     colors: {
       background: COLORS.dark.background,
       border: COLORS.dark.grey5,
@@ -23,6 +12,18 @@ const NAV_THEME: { light: Theme; dark: Theme } = {
       primary: COLORS.dark.primary,
       text: COLORS.white,
     },
+    dark: true,
+  },
+  light: {
+    colors: {
+      background: COLORS.light.background,
+      border: COLORS.light.grey5,
+      card: COLORS.light.card,
+      notification: COLORS.light.destructive,
+      primary: COLORS.light.primary,
+      text: COLORS.black,
+    },
+    dark: false,
   },
 };
 

@@ -1,23 +1,23 @@
-import DateTimePicker, {
-  DateTimePickerAndroid,
-} from '@react-native-community/datetimepicker';
 import * as React from 'react';
 import { Pressable, View } from 'react-native';
 
+import DateTimePicker, {
+  DateTimePickerAndroid,
+} from '@react-native-community/datetimepicker';
 import { Text } from '~/components/nativewindui/Text';
 
 export function DatePicker(
-  props: React.ComponentProps<typeof DateTimePicker> & {
-    mode: 'date' | 'time' | 'datetime';
-  }
+  props: {
+    mode: 'date' | 'datetime' | 'time';
+  } & React.ComponentProps<typeof DateTimePicker>,
 ) {
-  const show = (currentMode: 'time' | 'date') => () => {
+  const show = (currentMode: 'date' | 'time') => () => {
     DateTimePickerAndroid.open({
-      value: props.value,
-      onChange: props.onChange,
-      mode: currentMode,
-      minimumDate: props.minimumDate,
       maximumDate: props.maximumDate,
+      minimumDate: props.minimumDate,
+      mode: currentMode,
+      onChange: props.onChange,
+      value: props.value,
     });
   };
 
@@ -26,8 +26,8 @@ export function DatePicker(
       {props.mode.includes('date') && (
         <View className='relative pt-1.5'>
           <Pressable
-            onPress={show('date')}
             className='border border-border active:opacity-80 px-5 py-3 rounded-md'
+            onPress={show('date')}
           >
             <Text variant='subhead'>
               {new Intl.DateTimeFormat('en-US', {
@@ -36,7 +36,10 @@ export function DatePicker(
             </Text>
           </Pressable>
           <View className='absolute top-0 left-2 bg-card px-1'>
-            <Text variant='caption2' className='text-[10px] opacity-60'>
+            <Text
+              className='text-[10px] opacity-60'
+              variant='caption2'
+            >
               Date
             </Text>
           </View>
@@ -45,8 +48,8 @@ export function DatePicker(
       {props.mode.includes('time') && (
         <View className='relative pt-1.5'>
           <Pressable
-            onPress={show('time')}
             className='border border-border active:opacity-80 px-5 py-3 rounded-md'
+            onPress={show('time')}
           >
             <Text variant='subhead'>
               {new Intl.DateTimeFormat('en-US', {
@@ -55,7 +58,10 @@ export function DatePicker(
             </Text>
           </Pressable>
           <View className='absolute top-0 left-2 bg-card px-1'>
-            <Text variant='caption2' className='text-[10px] opacity-60'>
+            <Text
+              className='text-[10px] opacity-60'
+              variant='caption2'
+            >
               Time
             </Text>
           </View>

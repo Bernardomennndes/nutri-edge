@@ -14,22 +14,22 @@ const DEFAULT_MAX = 100;
 
 const ProgressIndicator = React.forwardRef<
   React.ElementRef<typeof View>,
-  React.ComponentPropsWithoutRef<typeof View> & {
-    value?: number;
-    max?: number;
+  {
     getValueLabel?: (value: number, max: number) => string;
-  }
+    max?: number;
+    value?: number;
+  } & React.ComponentPropsWithoutRef<typeof View>
 >(
   (
     {
-      value: valueProp,
-      max: maxProp,
-      getValueLabel = defaultGetValueLabel,
-      className,
       children,
+      className,
+      getValueLabel = defaultGetValueLabel,
+      max: maxProp,
+      value: valueProp,
       ...props
     },
-    ref
+    ref,
   ) => {
     const max = maxProp ?? DEFAULT_MAX;
     const value = isValidValueNumber(valueProp, max) ? valueProp : 0;
@@ -42,42 +42,42 @@ const ProgressIndicator = React.forwardRef<
             progress.value,
             [0, 100],
             [1, 100],
-            Extrapolation.CLAMP
+            Extrapolation.CLAMP,
           )}%`,
-          { overshootClamping: true }
+          { overshootClamping: true },
         ),
       };
     });
 
     return (
       <View
-        role='progressbar'
-        ref={ref}
+        accessibilityValue={{
+          max,
+          min: 0,
+          now: value,
+          text: getValueLabel(value, max),
+        }}
         aria-valuemax={max}
         aria-valuemin={0}
         aria-valuenow={value}
         aria-valuetext={getValueLabel(value, max)}
-        accessibilityValue={{
-          min: 0,
-          max,
-          now: value,
-          text: getValueLabel(value, max),
-        }}
         className={cn(
           'relative h-1 w-full overflow-hidden rounded-full',
-          className
+          className,
         )}
+        ref={ref}
+        role='progressbar'
         {...props}
       >
         <View className='absolute left-0 top-0 right-0 bottom-0 bg-muted opacity-20' />
         <Animated.View
+          className={cn('h-full bg-primary')}
           role='presentation'
           style={indicator}
-          className={cn('h-full bg-primary')}
         />
       </View>
     );
-  }
+  },
 );
 
 ProgressIndicator.displayName = 'ProgressIndicator';
