@@ -11,17 +11,14 @@ import { TamaguiProvider } from 'tamagui';
 
 import { tamaguiConfig } from '../tamagui.config';
 
+import '../global.css';
+
 export default function RootLayout() {
   const colorScheme = useColorScheme();
   return (
     <TamaguiProvider config={tamaguiConfig}>
       <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
         <Stack>
-          <Stack.Screen
-            name='(tabs)'
-            options={{ headerShown: false }}
-          />
-
           <Stack.Screen
             name='modal'
             options={{ presentation: 'modal' }}
