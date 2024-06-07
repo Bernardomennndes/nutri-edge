@@ -69,7 +69,12 @@
           }
         },
         "newlines-between": "always",
-        "internal-pattern": ["@/components/**", "@/stores/**", "@/pages/**", "@/lib/**"]
+        "internal-pattern": [
+          "@/components/**",
+          "@/stores/**",
+          "@/pages/**",
+          "@/lib/**"
+        ]
       }
     ],
     "prefer-template": "off",
@@ -86,6 +91,9 @@
     "testing-library/no-render-in-lifecycle": "off"
   },
   "settings": {
+    "next": {
+      "rootDir": "./src/"
+    },
     "import/resolver": {
       "node": {
         "extensions": [".js", ".jsx", ".ts", ".tsx"]

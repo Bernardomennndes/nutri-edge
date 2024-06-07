@@ -23,7 +23,7 @@
     "@react-navigation/drawer": "^6.6.6",
     "@react-navigation/native": "^6.1.7",
     "@roninoss/icons": "^0.0.4",
-    "@shopify/flash-list": "1.6.4",
+    "@shopify/flash-list": "1.6.3",
     "@tamagui/babel-plugin": "^1.99.1",
     "@tamagui/config": "^1.99.1",
     "class-variance-authority": "^0.7.0",

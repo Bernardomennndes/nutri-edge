@@ -9,6 +9,7 @@ module.exports = function (api) {
         disableExtraction: process.env.NODE_ENV === 'development',
         logTimings: true,
       },
+      "nativewind/babel"
     ],
   ];
 
