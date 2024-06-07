@@ -13,7 +13,7 @@ type Diet = {
 };
 
 interface DietCardProps extends CardProps {
-  diet?: Diet;
+  diet: Diet;
 }
 
 const DietCard = ({ diet, ...props }: DietCardProps) => {
@@ -25,7 +25,7 @@ const DietCard = ({ diet, ...props }: DietCardProps) => {
       {...props}
     >
       <Card.Header padded>
-        <View className='flex flex-row gap-2 bg-slate-500'>
+        <View className='flex flex-row gap-2'>
           <Avatar
             circular
             size='$6'
@@ -35,12 +35,14 @@ const DietCard = ({ diet, ...props }: DietCardProps) => {
               src='https://images.unsplash.com/photo-1548142813-c348350df52b?&w=150&h=150&dpr=2&q=80'
             />
           </Avatar>
-          <View className='flex'>
-            <Text className='font-bold'>{diet?.name}</Text>
-            <Text className='font-light'>{diet?.description}</Text>
+          <View className='flex flex-1 flex-col justify-between'>
+            <Text className='font-bold'>{diet.name}</Text>
+            <Text className='font-light whitespace-normal'>
+              {diet.description}
+            </Text>
             <View className='flex flex-row justify-between items-stretch'>
-              <Text>{diet?.mealsQuantity} Refeições</Text>
-              <Text>{diet?.totalCalories} Kcal</Text>
+              <Text>{diet.mealsQuantity} Refeições</Text>
+              <Text>{diet.totalCalories} Kcal</Text>
             </View>
           </View>
         </View>
