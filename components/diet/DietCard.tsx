@@ -3,14 +3,8 @@ import type { CardProps } from 'tamagui';
 import React from 'react';
 import { Text, View } from 'react-native';
 
+import { Diet } from '~/types/diet';
 import { Avatar, Card } from 'tamagui';
-
-type Diet = {
-  description: string;
-  mealsQuantity: number;
-  name: string;
-  totalCalories: number;
-};
 
 interface DietCardProps extends CardProps {
   diet: Diet;

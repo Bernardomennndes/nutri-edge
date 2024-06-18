@@ -1,5 +1,5 @@
-import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { Tabs } from 'expo-router';
+import { Home, NotepadText, UserRound } from 'lucide-react-native';
 
 import '../../global.css';
 
@@ -9,40 +9,23 @@ export default function TabLayout() {
       <Tabs.Screen
         name='index'
         options={{
-          tabBarIcon: ({ color }) => (
-            <FontAwesome
-              color={color}
-              name='home'
-              size={28}
-            />
-          ),
+          headerTitle: 'NutriEdge',
+          tabBarIcon: ({ color }) => <Home color={color} />,
           title: 'Home',
         }}
       />
       <Tabs.Screen
         name='diets'
         options={{
-          tabBarIcon: ({ color }) => (
-            <FontAwesome
-              color={color}
-              name='list'
-              size={18}
-            />
-          ),
+          tabBarIcon: ({ color }) => <NotepadText color={color} />,
           title: 'Dietas',
         }}
       />
       <Tabs.Screen
-        name='teste'
+        name='profile'
         options={{
-          tabBarIcon: ({ color }) => (
-            <FontAwesome
-              color={color}
-              name='filter'
-              size={28}
-            />
-          ),
-          title: 'Teste',
+          tabBarIcon: ({ color }) => <UserRound color={color} />,
+          title: 'Perfil',
         }}
       />
     </Tabs>

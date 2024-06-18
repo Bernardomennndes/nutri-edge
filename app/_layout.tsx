@@ -1,6 +1,5 @@
 // import '../tamagui-web.css'
 
-import { DefaultTheme, ThemeProvider } from '@react-navigation/native';
 import { Stack } from 'expo-router';
 import { TamaguiProvider } from 'tamagui';
 
@@ -10,16 +9,17 @@ import '../global.css';
 
 export default function RootLayout() {
   return (
-    // add this
     <TamaguiProvider config={tamaguiConfig}>
-      <ThemeProvider value={DefaultTheme}>
-        <Stack>
-          <Stack.Screen
-            name='(tabs)'
-            options={{ headerShown: false }}
-          />
-        </Stack>
-      </ThemeProvider>
+      <Stack>
+        <Stack.Screen
+          name='(tabs)'
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name='new-diet'
+          options={{ headerShown: false, headerTitle: 'Cadastrar Dieta' }}
+        />
+      </Stack>
     </TamaguiProvider>
   );
 }

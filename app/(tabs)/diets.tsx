@@ -1,7 +1,7 @@
-import { View, ScrollView } from 'react-native';
+import { ScrollView, View } from 'react-native';
 
 import DietCard from '~/components/diet/DietCard';
-import { Plus } from 'lucide-react-native';
+import { Link } from 'expo-router';
 import { Button } from 'tamagui';
 
 const cards = [
@@ -26,6 +26,13 @@ const cards = [
     name: 'Manter Peso',
     totalCalories: 2300,
   },
+  {
+    description: 'Dieta para manter o peso estável',
+    id: 4,
+    mealsQuantity: 5,
+    name: 'Manter Peso',
+    totalCalories: 2300,
+  },
 ];
 
 export default function Tab() {
@@ -38,7 +45,7 @@ export default function Tab() {
         theme='green_active'
         zIndex='$5'
       >
-        <Plus />
+        <Link href='/diets/new-diet'>+</Link>
       </Button>
       <ScrollView>
         <View className='flex flex-col p-4 gap-2'>
