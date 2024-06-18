@@ -16,8 +16,8 @@ export default function RootLayout() {
           options={{ headerShown: false }}
         />
         <Stack.Screen
-          name='new-diet'
-          options={{ headerShown: false, headerTitle: 'Cadastrar Dieta' }}
+          name='diets/new-diet'
+          options={{ headerShown: true, headerTitle: 'Cadastrar Dieta' }}
         />
       </Stack>
     </TamaguiProvider>
