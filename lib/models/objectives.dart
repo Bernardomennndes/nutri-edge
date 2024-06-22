@@ -1,0 +1,1 @@
+enum Objectives { health, strength, cutting }

@@ -1,0 +1,1 @@
+enum Intolerances { milk, gluten }
