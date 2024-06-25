@@ -1,1 +1,1 @@
-enum Objectives { health, strength, cutting }
+enum Objectives { health, strength, cutting, hypertrophy }

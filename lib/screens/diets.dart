@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:nutri_edge/components/diet_card.dart';
+import 'package:nutri_edge/controllers/diets_controller.dart';
 import 'package:nutri_edge/layout/layout.dart';
-import 'package:nutri_edge/style/colors.dart';
+import 'package:nutri_edge/style/constants.dart';
 
 class Diets extends StatelessWidget {
   const Diets({super.key});
@@ -13,18 +15,28 @@ class Diets extends StatelessWidget {
         onPressed: () => Navigator.pushNamed(context, '/newDietStepOne'),
         backgroundColor: COLOR_PRIMARY,
         child: const Icon(
-          Icons.add, 
+          Icons.add,
           color: Colors.white,
         ),
       ),
-      child: SingleChildScrollView(
-        child: Column(
-          children: [
-            DietCard(),
-            DietCard(),
-          ],
-        ),
-      ),
+      child: GetBuilder<DietsController>(builder: (controller) {
+        if (controller.diets.isEmpty) {
+          return const Center(
+            child: Text("Nenhuma dieta cadastrada."),
+          );
+        }
+        return SingleChildScrollView(
+          padding: const EdgeInsets.all(4),
+          child: Column(
+            children: [
+              for (var diet in controller.diets)
+                DietCard(
+                  diet: diet,
+                )
+            ],
+          ),
+        );
+      }),
     );
   }
 }

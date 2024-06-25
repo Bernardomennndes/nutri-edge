@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nutri_edge/layout/navbar_item.dart';
-import 'package:nutri_edge/style/colors.dart';
+import 'package:nutri_edge/style/constants.dart';
 
 class Navbar extends StatefulWidget {
   const Navbar({super.key});
@@ -10,7 +10,6 @@ class Navbar extends StatefulWidget {
 }
 
 class _NavbarState extends State<Navbar> {
-
   @override
   Widget build(BuildContext context) {
     String currentRoute = ModalRoute.of(context)!.settings.name!;
@@ -24,22 +23,23 @@ class _NavbarState extends State<Navbar> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           NavbarItem(
-            icon: Icons.home_outlined, 
+            icon: Icons.home_outlined,
             text: "Início",
             color: currentRoute == "/" ? COLOR_PRIMARY : null,
             onPressed: () => Navigator.pushReplacementNamed(context, '/'),
           ),
           NavbarItem(
-            icon: Icons.list_alt_sharp, 
+            icon: Icons.list_alt_sharp,
             text: "Dietas",
             color: currentRoute == "/diets" ? COLOR_PRIMARY : null,
             onPressed: () => Navigator.pushReplacementNamed(context, '/diets'),
           ),
           NavbarItem(
-            icon: Icons.person, 
+            icon: Icons.person,
             text: "Perfil",
             color: currentRoute == "/profile" ? COLOR_PRIMARY : null,
-            onPressed: () => Navigator.pushReplacementNamed(context, '/profile'),
+            onPressed: () =>
+                Navigator.pushReplacementNamed(context, '/profile'),
           ),
         ],
       ),

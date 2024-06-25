@@ -1,0 +1,173 @@
+{
+  "totalCalories": 2800,
+  "meals": [
+    {
+      "name": "Café da manhã",
+      "calories": 550,
+      "foods": [
+        {
+          "name": "Aveia em flocos",
+          "calories": 150,
+          "quantity": 50,
+          "unitMeasurement": "g"
+        },
+        {
+          "name": "Banana",
+          "calories": 105,
+          "quantity": 1,
+          "unitMeasurement": "un"
+        },
+        {
+          "name": "Leite de amêndoas",
+          "calories": 100,
+          "quantity": 200,
+          "unitMeasurement": "ml"
+        },
+        {
+          "name": "Ovos",
+          "calories": 95,
+          "quantity": 2,
+          "unitMeasurement": "un"
+        }
+      ]
+    },
+    {
+      "name": "Lanche da manhã",
+      "calories": 300,
+      "foods": [
+        {
+          "name": "Frango desfiado",
+          "calories": 150,
+          "quantity": 100,
+          "unitMeasurement": "g"
+        },
+        {
+          "name": "Batata doce",
+          "calories": 150,
+          "quantity": 150,
+          "unitMeasurement": "g"
+        }
+      ]
+    },
+    {
+      "name": "Almoço",
+      "calories": 700,
+      "foods": [
+        {
+          "name": "Arroz integral",
+          "calories": 200,
+          "quantity": 100,
+          "unitMeasurement": "g"
+        },
+        {
+          "name": "Feijão preto",
+          "calories": 150,
+          "quantity": 100,
+          "unitMeasurement": "g"
+        },
+        {
+          "name": "Filé de frango grelhado",
+          "calories": 250,
+          "quantity": 150,
+          "unitMeasurement": "g"
+        },
+        {
+          "name": "Salada de folhas verdes",
+          "calories": 100,
+          "quantity": 200,
+          "unitMeasurement": "g"
+        }
+      ]
+    },
+    {
+      "name": "Lanche da tarde",
+      "calories": 300,
+      "foods": [
+        {
+          "name": "Iogurte grego natural",
+          "calories": 100,
+          "quantity": 150,
+          "unitMeasurement": "g"
+        },
+        {
+          "name": "Mix de castanhas",
+          "calories": 200,
+          "quantity": 30,
+          "unitMeasurement": "g"
+        }
+      ]
+    },
+    {
+      "name": "Jantar",
+      "calories": 650,
+      "foods": [
+        {
+          "name": "Peixe assado",
+          "calories": 250,
+          "quantity": 150,
+          "unitMeasurement": "g"
+        },
+        {
+          "name": "Batata doce",
+          "calories": 150,
+          "quantity": 150,
+          "unitMeasurement": "g"
+        },
+        {
+          "name": "Couve refogada",
+          "calories": 50,
+          "quantity": 100,
+          "unitMeasurement": "g"
+        },
+        {
+          "name": "Arroz integral",
+          "calories": 200,
+          "quantity": 100,
+          "unitMeasurement": "g"
+        }
+      ]
+    },
+    {
+      "name": "Pré-treino",
+      "calories": 200,
+      "foods": [
+        {
+          "name": "Banana",
+          "calories": 105,
+          "quantity": 1,
+          "unitMeasurement": "un"
+        },
+        {
+          "name": "Aveia em flocos",
+          "calories": 95,
+          "quantity": 30,
+          "unitMeasurement": "g"
+        }
+      ]
+    },
+    {
+      "name": "Pós-treino",
+      "calories": 400,
+      "foods": [
+        {
+          "name": "Whey protein",
+          "calories": 120,
+          "quantity": 30,
+          "unitMeasurement": "g"
+        },
+        {
+          "name": "Frango desfiado",
+          "calories": 140,
+          "quantity": 100,
+          "unitMeasurement": "g"
+        },
+        {
+          "name": "Batata doce",
+          "calories": 140,
+          "quantity": 100,
+          "unitMeasurement": "g"
+        }
+      ]
+    }
+  ]
+}

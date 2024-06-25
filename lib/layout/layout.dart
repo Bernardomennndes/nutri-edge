@@ -6,38 +6,50 @@ class Layout extends StatelessWidget {
   final Widget child;
   final List<Widget>? appBarActions;
   final Widget? floatingActionButton;
-  final FloatingActionButtonLocation? floatingActionButtonLocation; 
+  final FloatingActionButtonLocation? floatingActionButtonLocation;
   final bool? showNavbar;
-  const Layout({super.key, this.title, required this.child, this.appBarActions, this.floatingActionButton, this.showNavbar, this.floatingActionButtonLocation});
+  const Layout(
+      {super.key,
+      this.title,
+      required this.child,
+      this.appBarActions,
+      this.floatingActionButton,
+      this.showNavbar,
+      this.floatingActionButtonLocation});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
+        forceMaterialTransparency: true,
         title: Text(
           title ?? '',
           style: const TextStyle(
             fontSize: 24,
-            fontWeight: FontWeight.bold
+            fontWeight: FontWeight.bold,
           ),
         ),
-        actions: appBarActions != null ? 
-          [
-            ...appBarActions!, 
-            const SizedBox(width: 10,)
-          ] 
-        : 
-          [],
+        actions: appBarActions != null
+            ? [
+                ...appBarActions!,
+                const SizedBox(
+                  width: 10,
+                )
+              ]
+            : [],
       ),
       body: Container(
-        padding: const EdgeInsets.all(10),
+        padding: const EdgeInsets.symmetric(
+          horizontal: 10,
+        ),
         child: child,
       ),
       resizeToAvoidBottomInset: false,
       bottomNavigationBar: showNavbar == false ? null : const Navbar(),
       floatingActionButton: floatingActionButton,
-      floatingActionButtonLocation: floatingActionButtonLocation ?? FloatingActionButtonLocation.endFloat,
+      floatingActionButtonLocation:
+          floatingActionButtonLocation ?? FloatingActionButtonLocation.endFloat,
     );
   }
 }

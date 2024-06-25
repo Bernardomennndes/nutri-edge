@@ -1,37 +1,45 @@
 import 'package:flutter/material.dart';
+import 'package:nutri_edge/controllers/profile_controller.dart';
 import 'package:nutri_edge/layout/layout.dart';
-import 'package:nutri_edge/style/colors.dart';
+import 'package:nutri_edge/utils/utils.dart';
 
 class Profile extends StatelessWidget {
   const Profile({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final profile = ProfileController.to.profile.value;
     return Layout(
       title: "Perfil",
       appBarActions: [
         SizedBox(
           width: 45,
           child: TextButton(
-            onPressed: () => Navigator.pushNamed(context, '/editProfile'),
+            onPressed: () => Navigator.pushNamed(
+              context,
+              '/editProfile',
+            ),
             style: const ButtonStyle(
-              overlayColor: WidgetStatePropertyAll(Color.fromARGB(255, 212, 212, 212))
-            ), 
+              overlayColor: WidgetStatePropertyAll(
+                Color.fromARGB(255, 212, 212, 212),
+              ),
+            ),
             child: const Icon(
               Icons.edit,
-              color: Colors.black,  
+              color: Colors.black,
             ),
           ),
-        )
+        ),
       ],
-      child: const Padding(
+      child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 18.0),
-        child: const Column(
+        child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             CircleAvatar(
-              radius: 70,
-              backgroundColor: COLOR_PRIMARY,
+              radius: 100,
+              backgroundColor: Colors.transparent,
+              backgroundImage: AssetImage(profile.avatarSrc),
             ),
             Expanded(
               child: Column(
@@ -45,22 +53,22 @@ class Profile extends StatelessWidget {
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text(
+                              const Text(
                                 "Nome",
                                 style: TextStyle(
-                                  fontWeight: FontWeight.bold
+                                  fontWeight: FontWeight.bold,
                                 ),
                               ),
                               Text(
-                                "Luiz Henrique Almeida Gomes",
-                                style: TextStyle(
-                                  fontWeight: FontWeight.w300
+                                profile.name,
+                                style: const TextStyle(
+                                  fontWeight: FontWeight.w300,
                                 ),
                               )
                             ],
-                          )
+                          ),
                         ],
-                      )
+                      ),
                     ],
                   ),
                   Column(
@@ -71,22 +79,22 @@ class Profile extends StatelessWidget {
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text(
+                              const Text(
                                 "Idade",
                                 style: TextStyle(
-                                  fontWeight: FontWeight.bold
+                                  fontWeight: FontWeight.bold,
                                 ),
                               ),
                               Text(
-                                "21 anos",
-                                style: TextStyle(
-                                  fontWeight: FontWeight.w300
+                                '${profile.age}',
+                                style: const TextStyle(
+                                  fontWeight: FontWeight.w300,
                                 ),
                               )
                             ],
-                          )
+                          ),
                         ],
-                      )
+                      ),
                     ],
                   ),
                   Column(
@@ -97,34 +105,36 @@ class Profile extends StatelessWidget {
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text(
+                              const Text(
                                 "Peso",
                                 style: TextStyle(
-                                  fontWeight: FontWeight.bold
+                                  fontWeight: FontWeight.bold,
                                 ),
                               ),
                               Text(
-                                "65 kg",
-                                style: TextStyle(
-                                  fontWeight: FontWeight.w300
+                                '${profile.weight} kg',
+                                style: const TextStyle(
+                                  fontWeight: FontWeight.w300,
                                 ),
                               )
                             ],
                           ),
-                          const SizedBox(width: 80,),
+                          const SizedBox(
+                            width: 80,
+                          ),
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text(
+                              const Text(
                                 "Altura",
                                 style: TextStyle(
-                                  fontWeight: FontWeight.bold
+                                  fontWeight: FontWeight.bold,
                                 ),
                               ),
                               Text(
-                                "165 cm",
-                                style: TextStyle(
-                                  fontWeight: FontWeight.w300
+                                '${profile.height} cm',
+                                style: const TextStyle(
+                                  fontWeight: FontWeight.w300,
                                 ),
                               )
                             ],
@@ -141,22 +151,22 @@ class Profile extends StatelessWidget {
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text(
+                              const Text(
                                 "Sexo",
                                 style: TextStyle(
-                                  fontWeight: FontWeight.bold
+                                  fontWeight: FontWeight.bold,
                                 ),
                               ),
                               Text(
-                                "Masculino",
-                                style: TextStyle(
-                                  fontWeight: FontWeight.w300
+                                profile.gender,
+                                style: const TextStyle(
+                                  fontWeight: FontWeight.w300,
                                 ),
                               )
                             ],
-                          )
+                          ),
                         ],
-                      )
+                      ),
                     ],
                   ),
                   Column(
@@ -167,27 +177,27 @@ class Profile extends StatelessWidget {
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text(
+                              const Text(
                                 "Tx. de Metabolismo Basal",
                                 style: TextStyle(
-                                  fontWeight: FontWeight.bold
+                                  fontWeight: FontWeight.bold,
                                 ),
                               ),
                               Text(
-                                "2700 Kcal",
-                                style: TextStyle(
-                                  fontWeight: FontWeight.w300
+                                '${Utils.basalMetabolicRateCalc(profile)} Kcal',
+                                style: const TextStyle(
+                                  fontWeight: FontWeight.w300,
                                 ),
                               )
                             ],
-                          )
+                          ),
                         ],
-                      )
+                      ),
                     ],
                   ),
                 ],
-              )
-            )
+              ),
+            ),
           ],
         ),
       ),
